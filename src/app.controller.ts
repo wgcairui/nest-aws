@@ -11,7 +11,9 @@ export class AppController {
   @Get()
   @HttpCode(204)
   @UseGuards()
-  getHello(@Body('id',use)): string {
+  getHello(@Body('id') use: any): string {
+    console.log(use);
+
     return this.appService.getHello();
   }
 }
