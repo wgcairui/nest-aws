@@ -8,8 +8,6 @@ export class AppController {
   } 
 
   @Get()
-  @HttpCode(204)
-  @UseGuards()
   getHello(@Ip() ip:string): string {
     console.log({ip});
     
