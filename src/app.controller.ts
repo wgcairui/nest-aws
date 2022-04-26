@@ -11,6 +11,6 @@ export class AppController {
   getHello(@Ip() ip:string): string {
     console.log({ip});
     
-    return this.appService.getHello();
+    return this.appService.getHello()+',ip:'+ip;
   }
 }
