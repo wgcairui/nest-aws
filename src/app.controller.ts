@@ -1,4 +1,4 @@
-import { Body, Controller, Get, HttpCode, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, HttpCode, Ip, UseGuards } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -10,7 +10,9 @@ export class AppController {
   @Get()
   @HttpCode(204)
   @UseGuards()
-  getHello(): string {
+  getHello(@Ip() ip:string): string {
+    console.log({ip});
+    
     return this.appService.getHello();
   }
 }
